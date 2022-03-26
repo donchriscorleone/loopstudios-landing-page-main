@@ -18,15 +18,15 @@ if (hamBtn) {
 
 function showMenu(toShow, newValue) {
     if (!toShow) {
-        hamBtn.style.backgroundImage = 'url("./images/icon-hamburger.svg")';
+        hamBtn.style.backgroundImage = 'url("/images/icon-hamburger.svg")';
         header.style.backgroundColor = "none";
-        header.style.backgroundImage = "url('./images/mobile/image-hero.jpg')";
+        header.style.backgroundImage = "url('/images/mobile/image-hero.jpg')";
         headerContent.style.display = "block";
         headerList.style.display = "none";
     } else {
         header.style.backgroundColor = "black";
         header.style.backgroundImage = "none";
-        hamBtn.style.backgroundImage = 'url("./images/icon-close.svg")';
+        hamBtn.style.backgroundImage = 'url("/images/icon-close.svg")';
         headerContent.style.display = "none";
         headerList.style.display = "flex";
     }
