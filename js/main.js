@@ -6,30 +6,43 @@ const headerList = document.querySelector('ul.header-list-popup')
 
 window.addEventListener('resize', (e) => {
     if (window.innerWidth > 900) {
-        showMenu(false, false);
+        hide();
+        isOpen = false;
     }
 })
 
 if (hamBtn) {
     hamBtn.addEventListener('click', (e) => {
-        showMenu(isOpen, !isOpen);
+        evalMenu(isOpen, !isOpen);
     })
 }
 
-function showMenu(toShow, newValue) {
+function evalMenu(toShow, newValue) {
     if (!toShow) {
-        hamBtn.style.backgroundImage = 'url("/images/icon-hamburger.svg")';
-        header.style.backgroundColor = "none";
-        header.style.backgroundImage = "url('/images/mobile/image-hero.jpg')";
-        headerContent.style.display = "block";
-        headerList.style.display = "none";
+        hide();
     } else {
-        header.style.backgroundColor = "black";
-        header.style.backgroundImage = "none";
-        hamBtn.style.backgroundImage = 'url("/images/icon-close.svg")';
-        headerContent.style.display = "none";
-        headerList.style.display = "flex";
+        show();
     }
 
     isOpen = newValue;
+}
+
+function reset() {
+
+}
+
+function hide() {
+    hamBtn.style.backgroundImage = 'url("/images/icon-hamburger.svg")';
+    header.style.backgroundColor = "none";
+    header.style.backgroundImage = "url('/images/mobile/image-hero.jpg')";
+    headerContent.style.display = "block";
+    headerList.style.display = "none";
+}
+
+function show() {
+    header.style.backgroundColor = "black";
+    header.style.backgroundImage = "none";
+    hamBtn.style.backgroundImage = 'url("/images/icon-close.svg")';
+    headerContent.style.display = "none";
+    headerList.style.display = "flex";
 }
