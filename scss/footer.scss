@@ -5,12 +5,33 @@
     min-height: 80vh;
     padding: 30px 0;
     row-gap: 30px;
+    position: relative;
 }
 
 .grid {
     display: grid;
     justify-items: center;
     align-content: space-evenly;
+}
+
+.attribution {
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+    font-family: $josefin;
+    text-align: center;
+
+    a {
+        text-decoration: none;
+        color: $very-dark-gray;
+        transition: all .5s;
+
+        &:hover {
+            color: #fff;
+        }
+    }
 }
 
 .footer-text p {
@@ -43,5 +64,11 @@
         grid-template-rows: 1fr 1fr;
         row-gap: 20px;
         align-items: center;
+    }
+
+    .attribution {
+        bottom: 5px;
+        right: 130px;
+        left: auto;
     }
 }
