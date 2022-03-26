@@ -1,0 +1,63 @@
+@import './variables.scss';
+
+.block {
+    display: grid;
+    row-gap: 50px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.block-image-container {
+    background-image: url('./../images/mobile/image-interactive.jpg');
+    height: 250px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.block-content {
+    display: grid;
+    row-gap: 20px;
+    text-align: center;
+}
+
+.block-content-header {
+    font-family: $josefin;
+    text-transform: uppercase;
+    font-size: 1.9rem;
+}
+
+.block-content-text {
+    font-family: $alata;
+    font-weight: 300;
+    color: $very-dark-gray;
+}
+
+@media screen and (min-width: 900px) {
+    .block {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 140px 1fr;
+        max-width: 900px;
+    }
+
+    .block-image-container {
+        height: 350px;
+        background-image: url('./../images/desktop/image-interactive.jpg');
+    }
+
+    .block-content {
+        z-index: 444;
+        margin-left: -100px;
+        margin-top: -50px;
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        background-color: $white;
+        padding: 50px;
+        text-align: left;
+    }
+
+    .block-content-text  {
+        line-height: 1.9;
+    }
+}

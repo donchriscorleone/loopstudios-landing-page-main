@@ -1,0 +1,63 @@
+@import './variables.scss';
+
+.list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-family: $alata;
+    flex-wrap: wrap;
+}
+
+.list-block {
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.list-inline {
+    flex-direction: row;
+    column-gap: 20px;
+    justify-content: center;
+}
+
+.list-item  {
+    position: relative;
+
+    a {
+        color: $white;
+        font-weight: 400;
+        text-decoration: none;
+    }
+    
+    &:hover {
+        cursor: pointer;
+        transition: all .3s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            border-bottom: 5px solid $white;
+            width: 50%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+    }
+
+}
+
+.list-nav {
+    display: none;
+}
+
+@media screen and (min-width: 900px) {
+    .list-footer {
+        flex-direction: row;
+        column-gap: 20px;
+        justify-content: center;
+    }
+
+    .list-nav {
+        display: flex;
+    }
+}
